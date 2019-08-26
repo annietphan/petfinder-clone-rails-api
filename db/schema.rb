@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_171140) do
+ActiveRecord::Schema.define(version: 2019_08_26_174507) do
 
   create_table "pets", force: :cascade do |t|
     t.integer "shelter_id"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_08_26_171140) do
     t.boolean "good_with_kids", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "kind"
   end
 
   create_table "shelters", force: :cascade do |t|
