@@ -7,9 +7,17 @@ class Api::V1::PetsController < ApplicationController
   end
 
   def show
+    @pet = Pet.find(params[:id])
+    render json: @pet
   end
 
   def create
+    @pet = @shelter.pets.new(pet_params)
+    if @pet.save
+      render json: @pet
+    else
+      render json: {error: 'Error adding pet'}
+    end
   end
 
   def update
