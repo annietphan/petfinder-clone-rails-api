@@ -1,2 +1,2 @@
-class SheltersController < ApplicationController
+class Api::V1::SheltersController < ApplicationController
 end
