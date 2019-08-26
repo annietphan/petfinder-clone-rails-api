@@ -7,11 +7,11 @@ class CreatePets < ActiveRecord::Migration[5.2]
       t.string :gender
       t.string :size
       t.string :age
-      t.boolean :vaccinated
-      t.boolean :house_trained
-      t.boolean :good_with_dogs
-      t.boolean :good_with_cats
-      t.boolean :good_with_kids
+      t.boolean :vaccinated, default: true
+      t.boolean :house_trained, default: true
+      t.boolean :good_with_dogs, default: true
+      t.boolean :good_with_cats, default: true
+      t.boolean :good_with_kids, default: true
 
       t.timestamps
     end
