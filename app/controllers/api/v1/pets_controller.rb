@@ -14,7 +14,7 @@ class Api::V1::PetsController < ApplicationController
   def create
     @pet = @shelter.pets.new(pet_params)
     if @pet.save
-      render json: @pet
+      render json: @shelter
     else
       render json: {error: 'Error adding pet'}
     end
@@ -24,6 +24,11 @@ class Api::V1::PetsController < ApplicationController
   end
 
   def destroy
+    @pet = Pet.find(params['id'])
+    @shelter = Shelter.find(@pet.shelter_id)
+    @pet.destroy
+
+    render json: @shelter
   end
 
   private
